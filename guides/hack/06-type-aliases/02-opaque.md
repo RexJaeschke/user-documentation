@@ -6,6 +6,14 @@ An *opaque type alias* is created using `newtype`.
 
 Compare this kind of alias with [Transparent Type Aliases](03-transparent.md).
 
+##XX
+
+blah, blah, blah.
+
+##Aliases with Type Constraints
+
+blah, blah, blah.
+
 **Under Construction**
 
  In the absence of a type-constraint, each opaque alias type is distinct from its underlying type and from any other types aliasing it or its underlying type. Only source code in the file that contains the definition of the opaque type alias is allowed access to the underlying implementation. As such, opaque type aliasing is an abstraction mechanism. Consider the following file, which contains an opaque alias definition:
