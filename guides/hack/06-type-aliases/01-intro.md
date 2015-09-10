@@ -4,7 +4,7 @@ A *type alias* is a shorthand name for a (potentially long and complex) type spe
 
 Any given type can have multiple aliases, and a type alias can itself have aliases.
 
-The type being aliased could be as simple as `int`, `string`, or a class type name, or as complicated as a map-like array, a tuple, or a shape. For example:
+The type being aliased could be as simple as `int`, `string`, or a class type name, or as complicated as a map-like array, a tuple, or a shape. In the following example, `Point` is defined to be an alias for a tuple of two `int`s:
 
 ```Hack
 newtype Point = (int, int);
@@ -20,7 +20,9 @@ function distance(Point $p1, Point $p2): float {
 }
 ```
 
-[[Rex: I don't want to duplicate the grammar here, but how can I point to it from here?]]
+[[Rex: I don't want to duplicate the grammar here, but how can I point to it from here?
+
+The complete syntax and constraints are defined in ...]]
 
 
 
