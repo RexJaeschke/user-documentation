@@ -4,7 +4,7 @@ A *type alias* is a shorthand name for a (potentially long and complex) type spe
 
 Any given type can have multiple aliases, and a type alias can itself have aliases.
 
-The type being aliased could be as simple as `int`, `string`, or a class type name, or as complicated as a map-like array, a tuple, or a shape. In the following example, `Counter` is defined to be an alias for an `int`, and `Point` is defined to be an alias for a tuple of two `int`s:
+The type being aliased could be as simple as `int`, `string`, or a class type name; or as complicated as a map-like array, a tuple, or a shape. In the following example, `Counter` is defined to be an alias for an `int`, and `Point` is defined to be an alias for a tuple of two `int`s:
 
 ```Hack
 type Counter = int;
