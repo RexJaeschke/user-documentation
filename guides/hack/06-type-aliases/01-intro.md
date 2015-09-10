@@ -4,25 +4,12 @@ A *type alias* is a shorthand name for a (potentially long and complex) type spe
 
 Any given type can have multiple aliases, and a type alias can itself have aliases.
 
-The type being aliased could be as simple as `int`, `string`, or a class type name, or as complicated as a map-like array, a tuple, or a shape. In the following example, `Point` is defined to be an alias for a tuple of two `int`s:
+The type being aliased could be as simple as `int`, `string`, or a class type name, or as complicated as a map-like array, a tuple, or a shape. In the following example, `Counter` is defined to be an alias for an `int`, and `Point` is defined to be an alias for a tuple of two `int`s:
 
 ```Hack
+type Counter = int;
 newtype Point = (int, int);
-
-function create_point(int $x, int $y): Point {
-  return tuple($x, $y);
-}
-
-function distance(Point $p1, Point $p2): float {
-  $dx = $p1[0] - $p2[0];
-  $dy = $p1[1] - $p2[1];
-  return sqrt($dx*$dx + $dy*$dy);
-}
 ```
-
-[[Rex: I don't want to duplicate the grammar here, but how can I point to it from here?
-
-The complete syntax and constraints are defined in ...]]
 
 
 
@@ -30,5 +17,8 @@ The complete syntax and constraints are defined in ...]]
 
 Type aliases are created using either the `newtype` or `type` keywords. An alias created using `newtype` is an [*opaque type alias*](02-opaque.md). An alias created using `type` is a [*transparent type alias*](03-transparent.md).
 
+[[Rex: I don't want to duplicate the grammar here, but how can I point to it from here?
+
+The complete syntax and constraints are defined in ...]]
 
 
