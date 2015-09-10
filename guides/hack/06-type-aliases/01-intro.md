@@ -1,3 +1,5 @@
+#Introduction
+
 A *type alias* is a shorthand name for a (potentially long and complex) type. Once a type alias has been defined, it can be used in any context in which the associated type is permitted. Type aliaising is an abstraction mechanism.
 
 Any given type can have multiple aliases, and a type alias can itself have aliases.
