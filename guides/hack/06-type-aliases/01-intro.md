@@ -5,15 +5,17 @@ Any given type can have multiple aliases, and a type alias can itself have alias
 The type being aliased could be as simple as `int`, `string`, or a class type name, or as complicated as a map-like array, a tuple, or a shape. For example:
 
 ```Hack
-private (function (): void) $prop;
-public function setProcess1((function (int): (int, int)) $val): void { … }
-public function getProcess2(): (function (): ?array<int>) { … }
-// -----------------------------------------
-function doit(int $iValue, (function (int): int) $process): int {
-  return $process($iValue);
+newtype Point = (int, int);
+
+function create_point(int $x, int $y): Point {
+  return tuple($x, $y);
 }
-$result = doit(5, function (int $p) { return $p * 2; });    // doubles 5
-$result = doit(5, function (int $p) { return $p * $p; });   // squares 5
+
+function distance(Point $p1, Point $p2): float {
+  $dx = $p1[0] - $p2[0];
+  $dy = $p1[1] - $p2[1];
+  return sqrt($dx*$dx + $dy*$dy);
+}
 ```
 
 [[Rex: I don't want to duplicate the grammar here, but how can I point to it from here?]]
