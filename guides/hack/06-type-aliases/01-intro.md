@@ -1,6 +1,6 @@
 #Introduction
 
-A *type alias* is a shorthand name for a (potentially long and complex) type. Once a type alias has been defined, it can be used in any context in which the associated type is permitted. Type aliaising is an abstraction mechanism.
+A *type alias* is a shorthand name for a (potentially long and complex) type specifier or definition. Once a type alias has been defined, it can be used in any context in which the associated type is permitted. Type aliaising is an abstraction mechanism.
 
 Any given type can have multiple aliases, and a type alias can itself have aliases.
 
@@ -26,8 +26,7 @@ function distance(Point $p1, Point $p2): float {
 
 
 
-
-An alias created using `newtype` is an [*opaque type alias*](02-opaque.md). An alias created using `type` is a [*transparent type alias*](03-transparent.md).
+Type aliases are created using either the `newtype` or `type` keywords. An alias created using `newtype` is an [*opaque type alias*](02-opaque.md). An alias created using `type` is a [*transparent type alias*](03-transparent.md).
 
 
 
