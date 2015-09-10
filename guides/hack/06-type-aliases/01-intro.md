@@ -2,7 +2,7 @@
 
 A *type alias* is a shorthand name for a (potentially long and complex) type specifier or definition. Once a type alias has been defined, it can be used in any context in which the associated type is permitted. Type aliaising is an abstraction mechanism. (Shape types can *only* be used via type aliases; see below.)
 
-Any given type can have multiple aliases, and a type alias can itself have aliases. As such, a given type can be known by any number of (equivalent) names.
+Any given type can have multiple aliases, and a type alias can itself have aliases.
 
 The type being aliased could be as simple as `int`, `string`, or a class type name, or as complicated as a map-like array, a tuple, or a shape. In the following example, `Counter` is defined to be an alias for an `int`, and `Point` is defined to be an alias for a tuple of two `int`s:
 
