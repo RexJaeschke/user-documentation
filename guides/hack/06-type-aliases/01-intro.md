@@ -1,8 +1,8 @@
 
 
-An alias created using `type` is a *transparent type alias*.
+An alias created using `newtype` is an [*opaque type alias*](02-opaque.md). 
 
-An alias created using `newtype` is an *opaque type alias*. 
+An alias created using `type` is a *transparent type alias*.
 
 
 Enter file contents here
