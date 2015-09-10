@@ -34,4 +34,4 @@ Instead, the shape must first be given a type-alias name, with that name being u
 ```Hack
 type Complex = shape('real' => float, 'imag' => float);
 function f1(Complex $p1): void { … }  // OK
-```
+``` 
