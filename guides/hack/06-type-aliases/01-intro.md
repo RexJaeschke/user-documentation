@@ -2,7 +2,9 @@ A *type alias* is a shorthand name for a (potentially long and complex) type. On
 
 Any given type can have multiple aliases, and a type alias can itself have aliases.
 
-The type being aliased could be as simple as `int`, `string`, or a class type name, or as complicated as a map-like array, a tuple, or a shape.
+The type being aliased could be as simple as `int`, `string`, or a class type name, or as complicated as a map-like array, a tuple, or a shape. For example:
+
+
 
 [[Rex: I don't want to duplicate the grammar here, but how can I point to it from here?]]
 
