@@ -39,6 +39,8 @@ Only those functions that need to know `Point`'s underlying structure should be 
 ```Hack
 // PointFunctions.php - Point's supporting functions
 
+require_once 'Point.php';
+
 function distance_between_2_Points(Point $p1, Point $p2): float {
   $dx = getX($p1) - getX($p2);
   $dy = getY($p1) - getY($p2);
@@ -46,17 +48,29 @@ function distance_between_2_Points(Point $p1, Point $p2): float {
 }
 ```
 
-Being in the same file as the alias definition, the functions create_point and distance have direct access to the integer fields in any Point's tuple. However, any file that includes this file does not.
+```Hack
+// TestPoint.php - User code that test type Point
 
+require_once 'Point.php';
 
+function main(): void {
+  $p1 = createPoint(5, 3);
+  $p2 = createPoint(9, -5);
+  $dist = distance_between_2_Points($p1, $p2);
+  echo "distance between points is " . $dist ."\n";
+}
 
+main();
+```
+
+Being in the same file as the alias definition, function createPoint and friends have---and need---direct access to the integer fields in any Point's tuple. However, any file that includes this file does not.
 
 ##Aliases with Type Constraints
 
 ??????
 
 Similarly, if a file defines the following alias:
-newtype Widget = int;
-any file that includes this file has no knowledge that a Widget is really an integer, so that the including file cannot perform any integer-like operations on a Widget.
+newtype Counter = int;
+any file that includes this file has no knowledge that a Counter is really an integer, so that the including file cannot perform any integer-like operations on a Widget.
 
 The presence of a type-constraint allows an opaque type alias to be treated as if it had the type specified by type-constraint-type, which removes some of the alias's opaqueness. Note: Although the presence of a constraint allows the alias type to be converted implicitly to that constraint type, there is no conversion in the opposite direction.
