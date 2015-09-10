@@ -48,6 +48,8 @@ function distance_between_2_Points(Point $p1, Point $p2): float {
 }
 ```
 
+Here then is some code that creates and uses some Points:
+
 ```Hack
 // TestPoint.php - User code that test type Point
 
@@ -67,10 +69,18 @@ Being in the same file as the alias definition, function createPoint and friends
 
 ##Aliases with Type Constraints
 
-??????
+**Need to rethink this example, as it is not a good one.**
 
-Similarly, if a file defines the following alias:
+Consider a file that containins the following opaque type definition:
+
+```Hack
 newtype Counter = int;
-any file that includes this file has no knowledge that a Counter is really an integer, so that the including file cannot perform any integer-like operations on a Widget.
+```
 
-The presence of a type-constraint allows an opaque type alias to be treated as if it had the type specified by type-constraint-type, which removes some of the alias's opaqueness. Note: Although the presence of a constraint allows the alias type to be converted implicitly to that constraint type, there is no conversion in the opposite direction.
+Any file that includes this file has no knowledge that a Counter is really an integer, so that the including file cannot perform any integer-like operations on that type. This is a major limitation, as the supposedly well-chosen name for teh abstract type, Counter, suggests that its value could increase and/or decrease. We can "fix" this by adding a type constraint to the alias's definition, as follows:
+
+```Hack
+newtype Counter as int = int;
+```
+
+The presence of the type constraint allows the opaque type to be treated as if it had the type specified by the  type constraint, which removes some of the alias's opaqueness. Note, that although the presence of a constraint allows the alias type to be converted implicitly to the constraint type, no conversion is defined in the opposite direction.
