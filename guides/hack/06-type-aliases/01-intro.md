@@ -13,9 +13,9 @@ newtype Point = (int, int);
 
 Type aliases are created using the `newtype` and `type` keywords. An alias created using `newtype` is an [*opaque type alias*](02-opaque.md). An alias created using `type` is a [*transparent type alias*](03-transparent.md).
 
-**[[Rex: I don't want to duplicate the grammar here, but how can I point to it from here?
+**Rex: I don't want to duplicate the grammar here, but how can I point to it from here?
 
-The complete syntax and constraints of a type-alias definition are defined in ...]]**
+The complete syntax and constraints of a type-alias definition are defined in ...**
 
 Note that shape types *must* be used with a type alias. Consider the following shape definition that is to represent a complex number:
 
@@ -34,4 +34,4 @@ Instead, the shape must first be given a type-alias name, with that name being u
 ```Hack
 type Complex = shape('real' => float, 'imag' => float);
 function f1(Complex $p1): void { … }  // OK
-``` 
+```
