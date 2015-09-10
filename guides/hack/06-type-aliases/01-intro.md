@@ -4,7 +4,17 @@ Any given type can have multiple aliases, and a type alias can itself have alias
 
 The type being aliased could be as simple as `int`, `string`, or a class type name, or as complicated as a map-like array, a tuple, or a shape. For example:
 
-
+```Hack
+private (function (): void) $prop;
+public function setProcess1((function (int): (int, int)) $val): void { … }
+public function getProcess2(): (function (): ?array<int>) { … }
+// -----------------------------------------
+function doit(int $iValue, (function (int): int) $process): int {
+  return $process($iValue);
+}
+$result = doit(5, function (int $p) { return $p * 2; });    // doubles 5
+$result = doit(5, function (int $p) { return $p * $p; });   // squares 5
+```
 
 [[Rex: I don't want to duplicate the grammar here, but how can I point to it from here?]]
 
