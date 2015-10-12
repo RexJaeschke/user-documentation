@@ -69,18 +69,22 @@ Being in the same file as the alias definition, function `createPoint` and frien
 
 ##Aliases with Type Constraints
 
-**Need to rethink this example, as it is not a good one.**
-
 Consider a file that containins the following opaque type definition:
 
 ```Hack
 newtype Counter = int;
 ```
 
-Any file that includes this file has no knowledge that a Counter is really an integer, so that the including file cannot perform any integer-like operations on that type. This is a major limitation, as the supposedly well-chosen name for teh abstract type, Counter, suggests that its value could increase and/or decrease. We can "fix" this by adding a type constraint to the alias's definition, as follows:
+Any file that includes this file has no knowledge that a Counter is really an integer, so that the including file cannot perform any integer-like operations on that type. This is a major limitation, as the supposedly well-chosen name for the abstract type, Counter, suggests that its value could increase and/or decrease. We can "fix" this by adding a type constraint to the alias's definition, as follows:
 
 ```Hack
 newtype Counter as int = int;
 ```
 
-The presence of the type constraint allows the opaque type to be treated as if it had the type specified by the  type constraint, which removes some of the alias's opaqueness. Note, that although the presence of a constraint allows the alias type to be converted implicitly to the constraint type, no conversion is defined in the opposite direction.
+The presence of the type constraint allows the opaque type to be treated as if it had the type specified by the type constraint, which removes some of the alias's opaqueness. Note, that although the presence of a constraint allows the alias type to be converted implicitly to the constraint type, no conversion is defined in the opposite direction. Specifically, the following is prohibited:
+
+```Hack
+Counter c = 0;    // Prohibited, as there is no implicit conversion from int (the type of 0) to Counter
+```
+
+The lesson here is to not get carried away inventing your own custom-name set of types, just for teh sake of being cute!
