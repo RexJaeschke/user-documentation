@@ -87,4 +87,6 @@ The presence of the type constraint allows the opaque type to be treated as if i
 Counter c = 0;    // Prohibited, as there is no implicit conversion from int (the type of 0) to Counter
 ```
 
-The lesson here is to not get carried away inventing your own custom-name set of types, just for teh sake of being cute!
+The lesson here is to not get carried away inventing your own custom-name set of types, just for the sake of being cute!
+
+A type constraint must be a subtype of the type being aliased.
