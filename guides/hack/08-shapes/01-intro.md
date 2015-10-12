@@ -27,7 +27,13 @@ private Point $origin;
 ```
 A field in a shape is accessed using its name as the key in a subscript-expression that operates on a shape of the corresponding shape type. For example:
 
-
+```hack
+function distance_between_2_Points(Point $p1, Point $p2): float {
+  $dx = $p1['x'] - $p2['x'];
+  $dy = $p1['y'] - $p2['y'];
+  return sqrt($dx*$dx + $dy*$dy);
+}
+```
 
 (indicated by single-quoted-string-literal, integer-literal, or qualified-name)
 
