@@ -16,8 +16,8 @@ A *shape literal* creates an unnamed shape with fields having values as specifie
 ```hack
 type Point = shape('x' => int, 'y' => int);
 
-function f(): Point {
-  return shape('y' => 0, 'x' => 0;
+function createPoint(int $x = 0, int $y = 0): Point {
+  return shape('y' => $y, 'x' => $x);
 }
 ```
 
