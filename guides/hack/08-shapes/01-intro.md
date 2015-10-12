@@ -36,21 +36,14 @@ function distance_between_2_Points(Point $p1, Point $p2): float {
 ```
 
 The name of a field can be written in one of three possible forms:
+
   * A single-quoted string (as shown above)
   * An integer literal
   * A class constant of type `int` or `string`
 
-The names of all fields in a given shape definition must have the same format.
+The names of all fields in a given shape definition must be distinct and have the same form.
 
 
-qualified-name must designate a class constant (§16.5) of type int or string.
-Each string in the set of strings designated by all the single-quoted-string-literals and qualified-names in a field-specifier-list must have a distinct value.
-Each integer in the set of all the integer-literals and qualified-names in a field-specifier-list must have a distinct value.
-The field-specifiers in a field-specifier-list must all have the single-quoted-string-literal form, the integer-literal form, or all have the qualified-name form; the forms must not be mixed.
-
-
-
-(indicated by single-quoted-string-literal, integer-literal, or qualified-name)
 
 
 
