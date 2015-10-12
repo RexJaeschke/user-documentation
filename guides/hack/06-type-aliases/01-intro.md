@@ -22,12 +22,12 @@ shape('real' => float, 'imag' => float)
 Unfortunately, a shape definition cannot be used directly in place of a type. For example, the following is prohibited:
 
 ```Hack
-function f1(shape('real' => float, 'imag' => float) $p1): void { … }  // DISALLOWED
+function f1(shape('real' => float, 'imag' => float) $z): void { … }  // DISALLOWED
 ```
 
 Instead, the shape must first be given a type-alias name, with that name being used in all subsequent references to that shape type, as follows:
 
 ```Hack
 type Complex = shape('real' => float, 'imag' => float);
-function f1(Complex $p1): void { … }  // OK
+function f1(Complex $z): void { … }  // OK
 ```
