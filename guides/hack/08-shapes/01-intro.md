@@ -2,11 +2,37 @@
 
 **Under Construction**
 
-A *shape* is ... *field* 
+## Introduction
 
-type aliasing needed
+A *shape* consists of a group of zero or more data *field*s taken together as a whole. [It takes on the role of what C and C# call a *struct*.] Such a construct is sometimes referred to as a *lightweight class*. For example:
 
-Shapes are a specific type alias representing a structured array, with a deterministic name and type of keys. They can be used as type annotations as well.nter file contents here
+```hack
+shape('x' => int, 'y' => int);
+```
+
+The definition of a shape contains an ordered set of fields each of which has a name and a type. In this case, the shape consists of two `int` fields, with the names `'x'` and `'y'`, respectively.
+
+However, such a construct does not directly define a first-class type. Specifically, such a type **cannot** be used as a type-specifier (in any of the usual places such as in the type of a property, a function parameter, a function return, or a constraint). Instead, a shape definition can only be used as a type-to-be-aliased in an type-alias declaration. For example, the following use is not permitted:
+
+```hack
+function f1(shape('x' => int, 'y' => int) $p1): void { … }  // DISALLLOWED
+```
+
+To use a shape type, we must first create an alias, such as the name `Point` below. Once that is done, the alias name can be used in any context in which a type-specifier can occur. For example:
+
+```hack
+type Point = shape('x' => int, 'y' => int);
+function f2(Point $p1): void { ... }
+private Point $origin;
+```
+A field in a shape is accessed using its name as the key in a subscript-expression that operates on a shape of the corresponding shape type. For example:
+
+
+
+(indicated by single-quoted-string-literal, integer-literal, or qualified-name)
+
+
+
 
 
 ## Shape Literals
