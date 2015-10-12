@@ -46,8 +46,15 @@ The names of all fields in a given shape definition must be distinct and have th
 
 
 
-
-
+````hack
+class C {
+  const string KEY1 = 'x';
+  const int KEY2 = 3;
+  const bool KEY3 = true;
+  const num KEY4 = 2.5;
+}
+```
+xx
 
 ## Shape Literals
 
@@ -61,6 +68,15 @@ function createPoint(int $x = 0, int $y = 0): Point {
 }
 ```
 
+A shape literal must initialize all the the fields in the shape.
+
 Note that the term *literal* as used with shapes is a misnomer; the expressions in the field initializers need not be compile-time constants.
 
 xx
+
+CHECK THIS: If the shape literal is made up entirely of literals, it can be used in function default default values and class field initialiers, as follows:
+
+class CY {
+  private Point $p1 = shape('x' => 0, 'y' => 5);
+}
+
