@@ -51,7 +51,7 @@ function distance_between_2_Points(Point $p1, Point $p2): float {
 Here then is some code that creates and uses some Points:
 
 ```Hack
-// TestPoint.php - User code that test type Point
+// TestPoint.php - User code that tests type Point
 
 require_once 'Point.php';
 
@@ -65,7 +65,7 @@ function main(): void {
 main();
 ```
 
-Being in the same file as the alias definition, function createPoint and friends have---and need---direct access to the integer fields in any Point's tuple. However, any file that includes this file does not.
+Being in the same file as the alias definition, function `createPoint` and friends have---and need---direct access to the integer fields in any Point's tuple. However, any file that includes this file does not.
 
 ##Aliases with Type Constraints
 
