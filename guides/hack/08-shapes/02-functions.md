@@ -37,9 +37,9 @@ Every shape has available to it a series of static functions, each of which is d
 
 **[[Rex: description goes here]]**
 
-**[[example goes here]]**
+**[[Rex: example goes here]]**
 
-**[[example discussion goes here]]**
+**[[Rex: example discussion goes here]]**
 
 ## `keyExists()`
 
@@ -53,9 +53,9 @@ Every shape has available to it a series of static functions, each of which is d
 
 **[[Rex: description goes here]]**
 
-**[[example goes here]]**
+**[[Rex: example goes here]]**
 
-**[[example discussion goes here]]**
+**[[Rex: example discussion goes here]]**
 
 ## `removeKey()`
 
@@ -69,17 +69,18 @@ Every shape has available to it a series of static functions, each of which is d
 
 **[[Rex: description goes here]]**
 
-**[[example goes here]]**
+**[[Rex: example goes here]]**
 
-**[[example discussion goes here]]**
+**[[Rex: example discussion goes here]]**
 
 ## `toArray()`
 
+```hack
 51   public static function toArray(shape() $shape): array<arraykey, mixed>; 
 ```
 
 **[[Rex: description goes here]]**
 
-**[[example goes here]]**
+**[[Rex: example goes here]]**
 
-**[[example discussion goes here]]**
+**[[Rex: example discussion goes here]]**
