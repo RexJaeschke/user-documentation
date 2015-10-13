@@ -11,14 +11,14 @@ The definition of a shape contains an ordered set of fields each of which has a 
 However, such a construct does not directly define a first-class type. Specifically, such a type **cannot** be used as a type-specifier (in any of the usual places such as in the type of a property, a function parameter, a function return, or a constraint). For example, the following use is not permitted:
 
 ```hack
-function f1(shape('x' => int, 'y' => int) $p1): void { … }  // DISALLLOWED
+function f(shape('x' => int, 'y' => int) $p1): void { … }  // DISALLLOWED
 ```
 
 To use a shape type, we must first create an alias, such as the name `Point` below. Once that is done, the alias name can be used in any context in which a type-specifier can occur. For example:
 
 ```hack
 type Point = shape('x' => int, 'y' => int);
-function f2(Point $p1): void { ... }
+function f(Point $p1): void { ... }
 private Point $origin;
 ```
 A field in a shape is accessed using its name as the key in a subscript-expression that operates on a shape of the corresponding shape type. For example:
