@@ -68,7 +68,7 @@ This function searches a given shape for a given field. If the field exists, `tr
 49   public static function removeKey(shape() $shape, arraykey $index): void {} 
 ```
 
-**[[Rex: description goes here]]**
+Given a shape and a field name, this function removes the specified field. If the field specified does not exist, ...
 
 **[[Rex: example goes here]]**
 
