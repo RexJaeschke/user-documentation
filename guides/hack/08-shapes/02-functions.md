@@ -1,8 +1,8 @@
 # Shape-Specific Functions
 
-Every shape has available to it a series of static functions, each of which is described below:
+Every shape has available to it a series of static functions, defined in the abstract final class `Shape`. These functions are described below:
 
-**[[Rex: I'll need to write some tests/examples to figure out how these work. Specific questions are noted below.]]**
+**[[Rex: Run my tests/examples and fill in the details below.]]**
 
 ## `idx()`
 
@@ -36,7 +36,7 @@ Every shape has available to it a series of static functions, each of which is d
 38 
 ```
 
-This function searches a given shape for a given field. If the field exists, its value is returned; otherwise, a default value is returned. For a field of type T, the function returns a value of type ?T. A default value can be provided; however, if that argument is omitted, the value `null` is used.
+This function searches a given shape for a given field. If the field exists, its value is returned; otherwise, a default value is returned. For a field of type *T*, the function returns a value of type `?`*T*. A default value can be provided; however, if that argument is omitted, the value `null` is used.
 
 **[[Rex: example goes here]]**
 
@@ -80,7 +80,7 @@ Given a shape and a field name, this function removes the specified field. If th
 51   public static function toArray(shape() $shape): array<arraykey, mixed>; 
 ```
 
-This function returns an array of type `array<arraykey, mixed>` containing one element for each field in the shape. The element's key and value are the name and value, respectively, of the corresponding field. The order of the elements is the same as the order of the fields.
+This function returns an array of type `array<arraykey, mixed>` containing one element for each field in the shape. Each element's key and value are the name and value, respectively, of the corresponding field. The order of the elements is the same as the order of the fields.
 
 **[[Rex: example goes here]]**
 
