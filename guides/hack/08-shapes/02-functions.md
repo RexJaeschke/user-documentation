@@ -52,7 +52,7 @@ This function searches a given shape for a given field. If the field exists, its
 43   public static function keyExists(shape() $shape, arraykey $index): bool {} 
 ```
 
-**[[Rex: description goes here]]**
+This function searches a given shape for a given field. If the field exists, `true` is returned; otherwise, `false` is returned.
 
 **[[Rex: example goes here]]**
 
@@ -68,7 +68,7 @@ This function searches a given shape for a given field. If the field exists, its
 49   public static function removeKey(shape() $shape, arraykey $index): void {} 
 ```
 
-This function searches a given shape for a given field. If the field exists, `true` is returned; otherwise, `false` is returned.
+**[[Rex: description goes here]]**
 
 **[[Rex: example goes here]]**
 
