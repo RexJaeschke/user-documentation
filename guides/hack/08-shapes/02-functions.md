@@ -9,7 +9,6 @@ Every shape has available to it a series of static functions, each of which is d
 ```hack
 12 abstract final class Shapes { 
 13 
- 
 14 /** 
 15  * Shapes::idx is a helper function for accessing shape field value, or getting 
 16  * a default if it's not set - similar to idx(), but for shapes. 
@@ -69,7 +68,7 @@ This function searches a given shape for a given field. If the field exists, its
 49   public static function removeKey(shape() $shape, arraykey $index): void {} 
 ```
 
-**[[Rex: description goes here]]**
+This function searches a given shape for a given field. If the field exists, `true` is returned; otherwise, `false` is returned.
 
 **[[Rex: example goes here]]**
 
