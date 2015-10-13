@@ -41,7 +41,7 @@ The name of a field can be written in one of three possible forms:
 
 The names of all fields in a given shape definition must be distinct and have the same form.
 
-
+**Re int literal usage, re-run my original test, as back then, I couldn't get the compiler to accept these**
 
 The following example shows how class constants can be used:
 
