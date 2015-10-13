@@ -2,6 +2,8 @@
 
 Every shape has available to it a series of static functions, each of which is described below:
 
+**[[Rex: I'll need to write some tests/examples to figure out how these work. Specific questions are noted below.]]**
+
 ## `idx()`
 
 ```hack
@@ -35,7 +37,7 @@ Every shape has available to it a series of static functions, each of which is d
 38 
 ```
 
-**[[Rex: description goes here]]**
+This function searches a given shape for a given field. If the field exists, its value is returned; otherwise, a default value is returned. For a field of type T, the function returns a value of type ?T. A default value can be provided; however, if that argument is omitted, the value `null` is used.
 
 **[[Rex: example goes here]]**
 
