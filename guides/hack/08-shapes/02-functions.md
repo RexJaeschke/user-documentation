@@ -1,20 +1,10 @@
-Document Shapes::toArray(), Shapes::idx(), etc...
+# Shape-Specific Functions
 
-From https://github.com/facebook/hhvm/blob/master/hphp/hack/hhi/Shapes.hhi 
+Every shape has available to it a series of static functions, each of which is described below:
+
+## `idx()`
 
 ```hack
-1 <?hh // decl 
-2 /** 
-3  * Copyright (c) 2014, Facebook, Inc. 
-4  * All rights reserved. 
-5  * 
-6  * This source code is licensed under the BSD-style license found in the 
-7  * LICENSE file in the "hack" directory of this source tree. An additional grant 
-8  * of patent rights can be found in the PATENTS file in the same directory. 
-9  * 
-10  */ 
-11 
- 
 12 abstract final class Shapes { 
 13 
  
@@ -43,21 +33,53 @@ From https://github.com/facebook/hhvm/blob/master/hphp/hack/hhi/Shapes.hhi
 36     $default = null, 
 37   ) {} 
 38 
- 
+```
+
+**[[Rex: description goes here]]**
+
+**[[example goes here]]**
+
+**[[example discussion goes here]]**
+
+## `keyExists()`
+
+```hack
 39   /** 
 40    * Check if a field in shape exists. 
 41    * Similar to array_key_exists, but for shapes. 
 42    */ 
 43   public static function keyExists(shape() $shape, arraykey $index): bool {} 
-44 
- 
+```
+
+**[[Rex: description goes here]]**
+
+**[[example goes here]]**
+
+**[[example discussion goes here]]**
+
+## `removeKey()`
+
+```hack
 45   /** 
 46    * Returns a $shape with $index field removed. Currently allowed only for 
 47    * local variables. 
 48    */ 
 49   public static function removeKey(shape() $shape, arraykey $index): void {} 
-50 
- 
-51   public static function toArray(shape() $shape): array<arraykey, mixed>; 
-52 } 
 ```
+
+**[[Rex: description goes here]]**
+
+**[[example goes here]]**
+
+**[[example discussion goes here]]**
+
+## `toArray()`
+
+51   public static function toArray(shape() $shape): array<arraykey, mixed>; 
+```
+
+**[[Rex: description goes here]]**
+
+**[[example goes here]]**
+
+**[[example discussion goes here]]**
