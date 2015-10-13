@@ -10,7 +10,7 @@ shape('x' => int, 'y' => int);
 
 The definition of a shape contains an ordered set of fields each of which has a name and a type. In this case, the shape consists of two `int` fields, with the names `'x'` and `'y'`, respectively.
 
-However, such a construct does not directly define a first-class type. Specifically, such a type **cannot** be used as a type-specifier (in any of the usual places such as in the type of a property, a function parameter, a function return, or a constraint). Instead, a shape definition can only be used as a type-to-be-aliased in an type-alias declaration. For example, the following use is not permitted:
+However, such a construct does not directly define a first-class type. Specifically, such a type **cannot** be used as a type-specifier (in any of the usual places such as in the type of a property, a function parameter, a function return, or a constraint). For example, the following use is not permitted:
 
 ```hack
 function f1(shape('x' => int, 'y' => int) $p1): void { … }  // DISALLLOWED
