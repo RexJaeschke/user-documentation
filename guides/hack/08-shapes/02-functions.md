@@ -80,7 +80,7 @@ This function searches a given shape for a given field. If the field exists, `tr
 51   public static function toArray(shape() $shape): array<arraykey, mixed>; 
 ```
 
-This function returns an array of type `array<arraykey, mixed>` containing one element for each field in the shape. The element's key and value are the name and value, respectively, of the the corresponding field. The order of the elements is the same as the order of the fields.
+This function returns an array of type `array<arraykey, mixed>` containing one element for each field in the shape. The element's key and value are the name and value, respectively, of the corresponding field. The order of the elements is the same as the order of the fields.
 
 **[[Rex: example goes here]]**
 
