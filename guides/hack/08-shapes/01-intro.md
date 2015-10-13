@@ -43,16 +43,17 @@ The names of all fields in a given shape definition must be distinct and have th
 
 
 
+The following example shows how class constants can be used:
 
 ````hack
-class C {
-  const string KEY1 = 'x';
-  const int KEY2 = 3;
-  const bool KEY3 = true;
-  const num KEY4 = 2.5;
+class C1 {
+  const string KEYA = 'x';
+  const string KEYB = 'y';
+  // ...
 }
+
+type Point = shape(C1::KEYA => int, C1::KEYB => int);
 ```
-xx
 
 # Shape Literals
 
