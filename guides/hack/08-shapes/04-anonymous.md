@@ -1,5 +1,7 @@
 # Nested/anonymous shapes
 
+**Notes from Joel M.**
+
 So far, every shape must have been defined with named type declaration. Sometimes though, the structure doesn't really "deserve" a separate name, and now you can declare them inline:
 
 ```hack
