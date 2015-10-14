@@ -14,6 +14,8 @@ type s = shape(
 
 You can even put them directly on function signatures:
 
+```hack
 function getCoords() : shape('x' => int, 'y' => int) {
+```
 
 though in more complicated cases a named shape will probably still be better for readability.
