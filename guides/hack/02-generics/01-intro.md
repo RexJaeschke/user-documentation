@@ -35,3 +35,27 @@ Within a generic parameter list, the parameter names must
   * be distinct
   * all begin with the letter T
   * not be the same as that used for a generic parameter for an enclosing class, interface, or trait.
+
+In the following case, class `Vector` has one type parameter, `Tv`. Method `map` also has one type parameter, `Tu`.
+
+```hack
+final class Vector<Tv> implements MutableVector<Tv> {
+  …
+  public function map<Tu>((function(Tv): Tu) $callback): Vector<Tu> { … }
+}
+```
+
+In the following case, class `Map` has two type parameters, `Tk` and `Tv`. Method `zip` has one, `Tu`.
+
+```hack
+final class Map<Tk, Tv> implements MutableMap<Tk, Tv> {
+  …
+  public function zip<Tu>(Traversable<Tu> $iter): Map<Tk, Pair<Tv, Tu>> { … }
+}
+```
+
+In the following case, function `maxValue` has one type parameter, `T`.
+
+```hack
+function maxValue<T>(T $p1, T $p2): T { … }
+```
