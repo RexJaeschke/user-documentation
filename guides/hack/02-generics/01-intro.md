@@ -25,6 +25,6 @@ Generics allow developers to write one class or method with the ability to be
 parameterized to any type, all while preserving type safety. Without generics,
 accomplishing a similar model would require creating `BoxInt` and `BoxString`
 classes, and that quickly gets verbose. Alternatively, we could treat `$value`
-as a `mixed` type and doing `instanceof()` checks, which means that inserting
-a string into a box of int would not raise a typechecker error, but would only
+as a `mixed` type and do `instanceof()` checks, which means that inserting
+a `string` into a box of `int` would not raise a typechecker error, but would only
 be discovered at runtime.
