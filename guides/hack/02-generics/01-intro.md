@@ -5,8 +5,8 @@ Hack contains a mechanism to define *generic* (that is, type-less) classes, inte
 An example of a generic class is `Vector<T>`, from the Hack collections
 implementation. `T` is called a _type parameter_, and it is what makes Vector
 generic. It can hold any kind of value, from `int` to an instance of a class, for example.
-However, for any instantiation of the class, once a type has been associated
-with `T`, it cannot be changed to hold any other type.
+However, for any instantiation of the Vector class, once a type has been associated
+with `T`, that type cannot be changed.
 
 @@ intro-examples/vector.php @@
 
