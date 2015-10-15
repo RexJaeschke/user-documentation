@@ -1,9 +1,9 @@
 # Introduction
 
-Hack contains a mechanism to define *generic* (that is, type-less) classes, interfaces, traits, methods, and functions, and to create type-specific instances of them via parameters. 
+Certain types (classes, interfaces, and traits) and their methods can be parameterized; that is, their declarations can have one or more placeholder names—called *type parameters*—that are associated with types via *type arguments* when a class is instantiated or a method is called. A type or method having such placeholder names is called a *generic type* or *generic method*, respectively. Top-level functions can also be parameterized giving rise to *generic functions*.
 
 An example of a generic class is `Vector<T>`, from the Hack collections
-implementation. `T` is called a _type parameter_, and it is what makes Vector
+implementation. `T` is a type parameter, and it is what makes Vector
 generic. It can hold any kind of value, from `int` to an instance of a class, for example.
 However, for any instantiation of the Vector class, once a type has been associated
 with `T`, that type cannot be changed.
