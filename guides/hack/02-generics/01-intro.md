@@ -28,3 +28,5 @@ classes, and that quickly gets verbose. Alternatively, we could treat `$value`
 as a `mixed` type and do `instanceof()` checks, which means that inserting
 a `string` into a box of `int` would not raise a typechecker error, but would only
 be discovered at runtime.
+
+The *arity* of a generic type or method is the number of type parameters declared for that type or method. As such, class `Vector` has arity 1. The Hack library generic container class `Map` implements an ordered, dictionary-style collection. This type has arity 2, and utilizes a key type and a value type, so the type `Map<int, Employee>`, for example, could be used to represent a group of Employee objects indexed by an integer employee number.
