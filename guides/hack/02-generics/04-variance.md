@@ -1,3 +1,7 @@
 # Variance
 
-If no variance is indicated in a generic parameter list, covariance is assumed.
+Each generic parameter can be marked with a variance indicator:
+ * `+` for covariance
+ * `-` for contravariance
+
+If no variance is indicated, covariance is assumed.
