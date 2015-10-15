@@ -8,53 +8,8 @@ If no variance is indicated, covariance is assumed.
 
 Here is an example of covariance:
 
-```hack
-<?hh
+@@ 04-variance-examples/covariance.php @@
 
-namespace NS_covariance_example;
-
-//class C<T> { // equivalent to the following line, as type parameters are covariant by default
-class C<+T> {
-  public function __construct(private T $t) {}
-}
-
-class Animal {}
-class Cat extends Animal {}
-
-function f(C<Animal> $p1): void { var_dump($p1); }
-
-function g(array<Animal> $p1): void { var_dump($p1); }
-
-function main(): void {
-  f(new C(new Animal()));
-  f(new C(new Cat()));	// accepted
-
-  g(array(new Animal(), new Animal()));
-  g(array(new Cat(), new Cat(), new Animal()));	// arrays are covariant
-}
-
-main();
-```
 Here is an example of contravariance:
 
-```hack
-<?hh
-
-namespace NS_contravariance_example;
-
-class C<-T> {
-  public function __construct(private T $t) {}
-}
-
-class Animal {}
-class Cat extends Animal {}
-
-function f(C<Cat> $p1): void { var_dump($p1); }
-
-function main(): void {
-  f(new C(new Animal()));	// accepted
-  f(new C(new Cat()));
-}
-
-main();
-```
+@@ 04-variance-examples/contravariance.php @@
