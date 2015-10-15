@@ -30,3 +30,8 @@ a `string` into a box of `int` would not raise a typechecker error, but would on
 be discovered at runtime.
 
 The *arity* of a generic type or method is the number of type parameters declared for that type or method. As such, class `Vector` has arity 1. The Hack library generic container class `Map` implements an ordered, dictionary-style collection. This type has arity 2, and utilizes a key type and a value type, so the type `Map<int, Employee>`, for example, could be used to represent a group of Employee objects indexed by an integer employee number.
+
+Within a generic parameter list, the parameter names must
+  * be distinct
+  * all begin with the letter T
+  * not be the same as that used for a generic parameter for an enclosing class, interface, or trait.
