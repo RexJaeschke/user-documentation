@@ -1,6 +1,6 @@
 <?hh
 
-namespace NS_covariance_example;
+namespace Hack\UserDocumentation\Generics\Variance\Examples\Covariance;
 
 //class C<T> { // equivalent to the following line, as type parameters are covariant by default
 class C<+T> {
