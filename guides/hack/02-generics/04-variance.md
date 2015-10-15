@@ -1,6 +1,6 @@
 # Variance
 
-Each generic parameter can be marked separately with a variance indicator:
+Each generic parameter can optionally be marked separately with a variance indicator:
  * `+` for covariance
  * `-` for contravariance
 
