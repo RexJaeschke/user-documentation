@@ -1,6 +1,6 @@
 # Introduction
 
-Hack contains a mechanism to define *generic* (that is, type-less) classes, interfaces, and traits, and to create type-specific instances of them via _parameter_s. 
+Hack contains a mechanism to define *generic* (that is, type-less) classes, interfaces, and traits, and to create type-specific instances of them via parameters. 
 
 An example of a generic class is `Vector<T>`, from the Hack collections
 implementation. `T` is called a _type parameter_, and it is what makes Vector
