@@ -8,8 +8,8 @@ If no variance is indicated, covariance is assumed.
 
 Here is an example of covariance:
 
-@@ 04-variance-examples/covariance.php @@
+@@ variance-examples/covariance.php @@
 
 Here is an example of contravariance:
 
-@@ 04-variance-examples/contravariance.php @@
+@@ variance-examples/contravariance.php @@
