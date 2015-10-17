@@ -1,4 +1,4 @@
-# Variance
+# Type Parameter Variance
 
 Each generic parameter can optionally be marked separately with a variance indicator:
  * `+` for covariance
