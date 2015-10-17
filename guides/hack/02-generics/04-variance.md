@@ -4,7 +4,7 @@ Each generic parameter can optionally be marked separately with a variance indic
  * `+` for covariance
  * `-` for contravariance
 
-If no variance is indicated, covariance is assumed.
+If no variance is indicated, the parameter is invariant.
 
 Here is an example of covariance:
 
