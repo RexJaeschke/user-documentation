@@ -2,7 +2,7 @@
 
 A generic type-constraint indicates a requirement that a type must fulfill in order to be accepted as a type argument for a given type parameter. (For example, it might have to be a given class type or a subtype of that class type, or it might have to implement a given interface.)
 
-Consider the following example in which class Complex has one type parameter, T, and that has a constraint:
+Consider the following example in which class Complex has one type parameter, `T`, and that has a constraint:
 
 ```hack
 class Complex<T as num> {
@@ -30,7 +30,7 @@ Without the `as num` constraint, a number of errors are reported, including the 
  * The `if` statement in method `__toString` compares a value of unknown type `T` with a `float`, yet such a comparison isn't defined for all possible type arguments.
  * The `return` statement in method `__toString` negates a value of unknown type `T`, yet such an operation isn't defined for all possible type arguments. Similarly, a value of unknown type `T` is being concatenated with a string.
 
-The following code creates `float` and `in`t instances, respectively, of class `Complex`:
+The following code creates `float` and `int` instances, respectively, of class `Complex`:
 
 ```hack
 $c1 = new Complex(10.5, 5.67);
