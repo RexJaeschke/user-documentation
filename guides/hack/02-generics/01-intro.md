@@ -36,7 +36,7 @@ Within a generic parameter list, the parameter names must
   * all begin with the letter T
   * not be the same as that used for a generic parameter for an enclosing class, interface, or trait.
 
-In the following case, class `Vector` has one type parameter, `Tv`. Method `map` also has one type parameter, `Tu`.
+In the following case, class `Vector` has one type parameter, `Tv`, so has arity 1). Method `map` also has one type parameter, `Tu`, so has arity 1.
 
 ```hack
 final class Vector<Tv> implements MutableVector<Tv> {
@@ -45,7 +45,7 @@ final class Vector<Tv> implements MutableVector<Tv> {
 }
 ```
 
-In the following case, class `Map` has two type parameters, `Tk` and `Tv`. Method `zip` has one, `Tu`.
+In the following case, class `Map` has two type parameters, `Tk` and `Tv`, so has arity 2. Method `zip` has one, `Tu`, so has arity 1.
 
 ```hack
 final class Map<Tk, Tv> implements MutableMap<Tk, Tv> {
@@ -54,7 +54,7 @@ final class Map<Tk, Tv> implements MutableMap<Tk, Tv> {
 }
 ```
 
-In the following case, function `maxValue` has one type parameter, `T`.
+In the following case, function `maxValue` has one type parameter, `T`, so has arity 1.
 
 ```hack
 function maxValue<T>(T $p1, T $p2): T { … }
