@@ -14,8 +14,8 @@ This method searches shape `$shape` (whose type is designated here as `S`) for t
 ```hack
   $s = shape('x' => 10, 'y' => 20);
   $v = Shapes::idx($s, 'x');      // field exists, return 10
-  $v = Shapes::idx($s, 'z');		  // field does not exist; return implict default, null
-  $v = Shapes::idx($s, 'z', -99);	// field does not exist; return explicit default, -99
+  $v = Shapes::idx($s, 'z');      // field does not exist; return implict default, null
+  $v = Shapes::idx($s, 'z', -99); // field does not exist; return explicit default, -99
 ```
 
 ## `keyExists()`
@@ -28,8 +28,8 @@ This method searches shape `$shape` (whose type is designated here as `S`) for t
 
 ```hack
 $s = shape('id' => "23456", 'url' => "www.example.com", 'count' => 23);
-$v = Shapes::keyExists($s, 'url');		// field exists, return true
-$v = Shapes::keyExists($s, 'name');		// does not exist, return false
+$v = Shapes::keyExists($s, 'url');    // field exists, return true
+$v = Shapes::keyExists($s, 'name');   // does not exist, return false
 ```
 
 ## `removeKey()`
@@ -42,13 +42,13 @@ Given a shape `$shape` (whose type is designated here as `S`) and a field name `
 
 ```hack
 $s = shape();
-Shapes::removeKey($s, 'name');	// no such field, so request ignored
+Shapes::removeKey($s, 'name');  // no such field, so request ignored
 
 $s = shape('x' => 10, 'y' => 20);
-Shapes::removeKey($s, 'x');   	// field 'x' removed
+Shapes::removeKey($s, 'x');     // field 'x' removed
 
 $s = shape('id' => "23456", 'url' => "www.example.com", 'count' => 23);
-Shapes::removeKey($s, 'url');		// field 'url' removed
+Shapes::removeKey($s, 'url');   // field 'url' removed
 ```
 
 ## `toArray()`
