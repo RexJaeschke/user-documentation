@@ -60,4 +60,9 @@ public static function toArray(S $shape): array<arraykey, mixed>;
 This method returns an array of type `array<arraykey, mixed>` containing one element for each field in the shape `$shape`. Each element's key and value are the name and value, respectively, of the corresponding field. The order of the elements in the array is the same as the order in which the fields were inserted into the shape.
 
 ```hack
+$s = shape();
+$a = Shapes::toArray($s);   // returns an array of 0 elements
+
+$s = shape('id' => "23456", 'url' => "www.example.com", 'count' => 23);
+$a = Shapes::toArray($s);   // returns an array of 3 elements, of type string, string, and int, respectively
 ```
