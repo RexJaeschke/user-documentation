@@ -26,4 +26,4 @@ function run(): void {
 }
 ```
 
-There is one important caveat, however. Inside function `processTransaction` the only field you can access in `$t` is `'trtype'`.
+There is one important caveat, however. Inside function `processTransaction` the only field you can access in `$t` is `'trtype'`. This is true even if you use a switch with `case Bank::DEPOSIT:`, for example, to determine the actual kind of the transaction.
