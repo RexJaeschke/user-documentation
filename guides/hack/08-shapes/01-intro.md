@@ -14,7 +14,7 @@ Although we can use a shape type directly, oftentimes it is convenient to create
 type Point = shape('x' => int, 'y' => int);
 function f(Point $p1): void { /* ... */ }
 
-class C {
+class C1 {
   private Point $origin;
   private function __construct(int $x = 0, int $y = 0) {
     $this->origin = shape('x' => $x, 'y' => $y);
@@ -34,21 +34,24 @@ function distance_between_2_Points(Point $p1, Point $p2): float {
 The name of a field can be written in one of three possible forms:
 
   * A single-quoted string (as shown above)
-  * An integer literal
-  * A class constant of type `int` or `string`
+  * A class constant of type `string` or `int` 
+
+Note that an integer literal **cannot** be used directly as a field name.
 
 The names of all fields in a given shape definition must be distinct and have the same form.
-
-**[[Rex: Re int literal usage, re-run my original test, as back then, I couldn't get the compiler to accept these]]**
 
 The following example shows how class constants can be used:
 
 ````hack
-class C1 {
+class C2 {
   const string KEYA = 'x';
   const string KEYB = 'y';
-  // ...
+  const int KEYX = 10;
+  const int KEYY = 23;
 }
 
-type Point = shape(C1::KEYA => int, C1::KEYB => int);
+type Point2 = shape(C2::KEYA => int, C2::KEYB => int);
+
+type Point3 = shape(C2::KEYX => int, C2::KEYY => int);
 ```
+In the case of the integer class constants, by arbitrary choice, the x-coordinate is stored in the element with key 10, while the y-coordinate is stored in the element with key 23.
