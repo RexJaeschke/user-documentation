@@ -21,7 +21,7 @@ This function searches shape `$shape` (whose type is designated here as `S`) for
 ## `keyExists()`
 
 ```hack
-public static function keyExists(S $shape, arraykey $index): bool {} 
+public static function keyExists(S $shape, arraykey $index): bool; 
 ```
 
 This function searches shape `$shape` (whose type is designated here as `S`) for the field named `$index`. If the field exists, `true` is returned; otherwise, `false` is returned. `$index` must be a single-quoted string or a class constant of type `string` or `int`.
@@ -35,7 +35,7 @@ $v = Shapes::keyExists($s, 'name');		// does not exist, return false
 ## `removeKey()`
 
 ```hack
-public static function removeKey(S $shape, arraykey $index): void {} 
+public static function removeKey(S $shape, arraykey $index): void; 
 ```
 
 Given a shape `$shape` (whose type is designated here as `S`) and a field name `$index`, this function removes the specified field from that shape. If the field specified does not exist, the removal request is ignored. `$index` must be a single-quoted string or a class constant of type `string` or `int`.
