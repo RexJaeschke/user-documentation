@@ -1,6 +1,6 @@
 # Introduction
 
-A *shape* consists of a group of zero or more data *field*s taken together as a whole. [It takes on the role of what C and C# call a *struct*.] Such a construct is sometimes referred to as a *lightweight class*. For example:
+A *shape* consists of a group of zero or more data *field*s taken together as a whole. For example:
 
 ```hack
 shape('x' => int, 'y' => int)
