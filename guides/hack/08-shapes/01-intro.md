@@ -31,7 +31,7 @@ function distance_between_2_Points(Point $p1, Point $p2): float {
 }
 ```
 
-The name of a field can be written in one of three possible forms:
+The name of a field can be written in one of two possible forms:
 
   * A single-quoted string (as shown above)
   * A class constant of type `string` or `int` 
