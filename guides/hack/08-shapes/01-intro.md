@@ -3,23 +3,23 @@
 A *shape* consists of a group of zero or more data *field*s taken together as a whole. [It takes on the role of what C and C# call a *struct*.] Such a construct is sometimes referred to as a *lightweight class*. For example:
 
 ```hack
-shape('x' => int, 'y' => int);
+shape('x' => int, 'y' => int)
 ```
 
 The definition of a shape contains an ordered set of fields each of which has a name and a type. In this case, the shape consists of two `int` fields, with the names `'x'` and `'y'`, respectively.
 
-However, such a construct does not directly define a first-class type. Specifically, such a type **cannot** be used as a type-specifier (in any of the usual places such as in the type of a property, a function parameter, a function return, or a constraint). For example, the following use is not permitted:
-
-```hack
-function f(shape('x' => int, 'y' => int) $p1): void { … }  // DISALLLOWED
-```
-
-To use a shape type, we must first create an alias, such as the name `Point` below. Once that is done, the alias name can be used in any context in which a type-specifier can occur. For example:
+Although we can use a shape type directly, oftentimes it is convenient to create an alias, such as the name `Point` below, and use that instead.
 
 ```hack
 type Point = shape('x' => int, 'y' => int);
-function f(Point $p1): void { ... }
-private Point $origin;
+function f(Point $p1): void { /* ... */ }
+
+class C {
+  private Point $origin;
+  private function __construct(int $x = 0, int $y = 0) {
+    $this->origin = shape('x' => $x, 'y' => $y);
+  }
+}
 ```
 A field in a shape is accessed using its name as the key in a subscript-expression that operates on a shape of the corresponding shape type. For example:
 
