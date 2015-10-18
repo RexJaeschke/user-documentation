@@ -1,6 +1,6 @@
 # Shape-Specific Functions
 
-The abstract final class `Shapes` provides a series of static methods that can operate on a shape of arbitrary type. These methods are described below:
+The abstract final class `Shapes` provides some static methods that can operate on a shape of any type. These methods are described below:
 
 ## `idx()`
 
@@ -9,11 +9,17 @@ The abstract final class `Shapes` provides a series of static methods that can o
 22  public static function idx(S $shape, arraykey $index, Tv $default) : Tv; 
 ```
 
-This function searches shape `$shape` (whose type is designated here as `S`) for the field named `$index`. If the field exists, its value is returned; otherwise, a default value is returned. For a field of type *T*, the function returns a value of type `?`*T*. A default value `$default` can be provided; however, if that argument is omitted, the value `null` is used.
+This function searches shape `$shape` (whose type is designated here as `S`) for the field named `$index`. If the field exists, its value is returned; otherwise, a default value is returned. For a field of type *T*, the function returns a value of type `?`*T*. A default value `$default` can be provided; however, if that argument is omitted, the value `null` is used. `$index` must be a single-quoted string or a class constant of type `string` or `int`.
 
-**[[Rex: example goes here]]**
+```hack
+  $s = shape('x' => 10, 'y' => 20);
+  $v = Shapes::idx($s, 'x');      // field exists, return 10
+  $v = Shapes::idx($s, 'z');		  // field does not exist; return implict default, null
+  $v = Shapes::idx($s, 'z', -99);	// field does not exist; return explicit default, -99
 
-**[[Rex: example discussion goes here]]**
+  $s = shape(C::KEYINTX => 10, C::KEYINTY => 20);
+  $v = Shapes::idx($s, C::KEYINTY);	// field exists, return 20
+```
 
 ## `keyExists()`
 
@@ -27,7 +33,9 @@ This function searches shape `$shape` (whose type is designated here as `S`) for
 
 This function searches a given shape for a given field. If the field exists, `true` is returned; otherwise, `false` is returned.
 
-**[[Rex: example goes here]]**
+
+```hack
+```
 
 **[[Rex: example discussion goes here]]**
 
@@ -43,7 +51,9 @@ This function searches a given shape for a given field. If the field exists, `tr
 
 Given a shape and a field name, this function removes the specified field. If the field specified does not exist, ...
 
-**[[Rex: example goes here]]**
+
+```hack
+```
 
 **[[Rex: example discussion goes here]]**
 
@@ -55,6 +65,8 @@ Given a shape and a field name, this function removes the specified field. If th
 
 This function returns an array of type `array<arraykey, mixed>` containing one element for each field in the shape. Each element's key and value are the name and value, respectively, of the corresponding field. The order of the elements is the same as the order of the fields.
 
-**[[Rex: example goes here]]**
+
+```hack
+```
 
 **[[Rex: example discussion goes here]]**
