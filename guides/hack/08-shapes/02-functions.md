@@ -1,42 +1,15 @@
 # Shape-Specific Functions
 
-Every shape has available to it a series of static functions, defined in the abstract final class `Shape`. These functions are described below:
-
-**[[Rex: Run my tests/examples and fill in the details below.]]**
+The abstract final class `Shapes` provides a series of static methods that can operate on a shape of arbitrary type. These methods are described below:
 
 ## `idx()`
 
 ```hack
-12 abstract final class Shapes { 
-13 
-14 /** 
-15  * Shapes::idx is a helper function for accessing shape field value, or getting 
-16  * a default if it's not set - similar to idx(), but for shapes. 
-17  * 
-18  * This behavior cannot be expressed with type hints, so it's hardcoded in the 
-19  * typechecker. Depending on arity, it will be one of the 
-20  * 
-21  * idx(S $shape, arraykey $index) : ?Tv, 
-22  * idx(S $shape, arraykey $index, Tv $default) : Tv, 
-23  * 
-24  * where $index must be statically known (literal or class constant), and S is 
-25  * a shape containing such key: 
-26  * 
-27  * type S = shape( 
-28  *   ... 
-29  *   $index => Tv, 
-30  *   ... 
-31  * ) 
-32  */ 
-33   public static function idx( 
-34     shape() $shape, 
-35     arraykey $index, 
-36     $default = null, 
-37   ) {} 
-38 
+21  public static function idx(S $shape, arraykey $index) : ?Tv; 
+22  public static function idx(S $shape, arraykey $index, Tv $default) : Tv; 
 ```
 
-This function searches a given shape for a given field. If the field exists, its value is returned; otherwise, a default value is returned. For a field of type *T*, the function returns a value of type `?`*T*. A default value can be provided; however, if that argument is omitted, the value `null` is used.
+This function searches shape `$shape` (whose type is designated here as `S`) for the field named `$index`. If the field exists, its value is returned; otherwise, a default value is returned. For a field of type *T*, the function returns a value of type `?`*T*. A default value `$default` can be provided; however, if that argument is omitted, the value `null` is used.
 
 **[[Rex: example goes here]]**
 
