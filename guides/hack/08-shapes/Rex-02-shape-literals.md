@@ -18,8 +18,8 @@ Note that the term *literal* as used with shapes is a misnomer; the expressions 
 type Point = shape('x' => int, 'y' => int);
 
 class C {
-  const Point ORIGIN = shape('x' => 0, 'y' => 0);     		// initializer rejected
-  private static Point $p2 = shape('x' => 0, 'y' => 5);   // initializer okay
-  private Point $p3 = shape('x' => 0, 'y' => 5);          // initializer okay
+  const Point ORIGIN = shape('x' => 0, 'y' => 0);        // initializer rejected
+  private static Point $p2 = shape('x' => 0, 'y' => 5);  // initializer okay
+  private Point $p3 = shape('x' => 0, 'y' => 5);         // initializer okay
 }
 ```
