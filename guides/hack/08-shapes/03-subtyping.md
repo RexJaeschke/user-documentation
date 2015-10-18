@@ -21,8 +21,9 @@ function processTransaction(Transaction $t): void {
 function run(): void {
   processTransaction(shape('trtype' => Bank::DEPOSIT, 'toaccnum' => 23456, 'amount' => 100.00));
   processTransaction(shape('trtype' => Bank::WITHDRAWAL, 'fromaccnum' => 3157, 'amount' => 100.00));
-  processTransaction(shape('trtype' => Bank::TRANSFER, 'fromaccnum' => 23456, 'toaccnum' => 3157, 'amount' => 100.00));
+  processTransaction(shape('trtype' => Bank::TRANSFER, 'fromaccnum' => 23456, 'toaccnum' => 3157,
+    'amount' => 100.00));
 }
 ```
 
-There is one important caveat, however. Inside function `processTransaction` the only field you can access is `'trtype'`.
+There is one important caveat, however. Inside function `processTransaction` the only field you can access in `$t` is `'trtype'`.
