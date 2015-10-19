@@ -49,7 +49,13 @@ In summary, `T as U` asserts that `T` must be a subtype of `U`.
 
 Unlike, an `as` type constraint, `T super U` asserts that `T` must be a supertype of `U`.
 
+This kind of constraint is rather exotic, but solves an interesting problem encountered when performing operations involving multiple types . Here is an example of how its used on method `concat` in the library interface type `ConstVector`:
+
 ```hack
-<T super V>
+interface ConstVector<+T> {
+  public function concat<Tu super T>(ConstVector<Tu> $x): ConstVector<Tu>;
+  // ...
+}
 ```
 
+Consider the case in which we call `concat` to concatenate a `Vector<float>` and a `Vector<int>`. As these have a common supertype, `num`, the `super` constraint allows the checker to determine that `num` is the inferred type of `Tu`.
