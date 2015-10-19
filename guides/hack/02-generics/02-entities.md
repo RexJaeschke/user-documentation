@@ -24,7 +24,7 @@ The function returns the larger of the two arguments passed to it. In the case o
 
 # Methods
 
-Although the `push` and `pop` methods in the generic class type `Stack` in the Classes example above, they are not themselves generic. A generic method has its own type parameters, even if that method does not belong to a generic class. Consider the library type `Pair`:
+Although the `push` and `pop` methods are defined in the generic class type `Stack` in the Classes example above, they are not themselves generic. A generic method has its own type parameters, even if that method does not belong to a generic class. Consider the library type `Pair`:
 
 ```hack
 final class Pair<Tv1, Tv2> implements ConstVector<mixed> {
