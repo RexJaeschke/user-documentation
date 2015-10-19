@@ -1,5 +1,7 @@
 #Generic Type Constraints
 
+## Specifying Constraints via `as`
+
 A generic type-constraint indicates a requirement that a type must fulfill in order to be accepted as a type argument for a given type parameter. (For example, it might have to be a given class type or a subtype of that class type, or it might have to implement a given interface.)
 
 Consider the following example in which class `Complex` has one type parameter, `T`, and that has a constraint, `num`:
@@ -39,10 +41,8 @@ $c3 = new Complex(5, 6);
 echo "\$c3 + \$c4 = " . Complex::add($c3, $c4) . "\n";
 ```
 
+## Specifying Constraints via `super`
 
-
-
-Document both `as` and `super`  
-
-<T as V>
+```hack
 <T super V>
+```
