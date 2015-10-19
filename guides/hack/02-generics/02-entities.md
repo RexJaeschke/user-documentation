@@ -12,6 +12,16 @@ The line commented-out, attempts to call `push` with a non-`int` argument. This 
 
 # Functions
 
+Here is an example of a generic function, `maxVal`, having one type parameter, `T`:
+
+```hack
+function maxVal<T>(T $p1, T $p2): T {
+  return $p1 > $p2 ? $p1 : $p2;
+}
+```
+
+The function returns the larger of the two arguments passed to it. In the case of the call `maxVal(10, 20)`, given that the type of both arguments is `int`, that is inferred as the type corresponding to the type parameter `T`, and an `int` value is returned. In the case of the call `maxVal(15.6, -20.78)`, `T` is inferred as `float`, while in `maxVal('red', 'green')`, `T` is inferred as `string`.
+
 # Methods
 
 # Interfaces
