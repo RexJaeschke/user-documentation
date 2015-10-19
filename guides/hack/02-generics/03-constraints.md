@@ -1,8 +1,10 @@
 #Generic Type Constraints
 
-## Specifying Constraints via `as`
+A generic type-constraint indicates a requirement that a type must fulfill in order to be accepted as a type argument for a given type parameter. (For example, it might have to be a given class type or a subtype of that class type, or it might have to implement a given interface.) 
 
-A generic type-constraint indicates a requirement that a type must fulfill in order to be accepted as a type argument for a given type parameter. (For example, it might have to be a given class type or a subtype of that class type, or it might have to implement a given interface.)
+There are two kinds of generic type constraints, specified by the `as` and `super` keywords, respectively. Each is discussed below. 
+
+## Specifying Constraints via `as`
 
 Consider the following example in which class `Complex` has one type parameter, `T`, and that has a constraint, `num`:
 
@@ -45,8 +47,9 @@ In summary, `T as U` asserts that `T` must be a subtype of `U`.
 
 ## Specifying Constraints via `super`
 
+Unlike, an `as` type constraint, `T super U` asserts that `T` must be a supertype of `U`.
+
 ```hack
 <T super V>
 ```
 
-In summary, `T super U` asserts that `T` must be a supertype of `U`.
