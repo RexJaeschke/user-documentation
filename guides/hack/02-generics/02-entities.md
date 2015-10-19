@@ -80,3 +80,10 @@ trait MyTrait<T1, T2> {
 ```
 
 # Type Aliases
+
+A type alias can alias any type, including a generic type. For example:
+
+```hack
+newtype Matrix<T> = Vector<Vector<T>>;
+type Serialized<T> = string;	// T is not used
+```
