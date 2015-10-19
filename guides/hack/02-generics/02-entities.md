@@ -70,4 +70,13 @@ Here, we have generic list and queue classes each of which implements the same g
 
 # Traits
 
+Like a generic class, a generic trait has a type-parameter list; for example:
+
+```hack 
+trait MyTrait<T1, T2> {
+  public static function f(T1 $value): void {
+  // ...
+}
+```
+
 # Type Aliases
