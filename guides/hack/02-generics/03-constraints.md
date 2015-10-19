@@ -41,8 +41,12 @@ $c3 = new Complex(5, 6);
 echo "\$c3 + \$c4 = " . Complex::add($c3, $c4) . "\n";
 ```
 
+In summary, `T as U` asserts that `T` must be a subtype of `U`.
+
 ## Specifying Constraints via `super`
 
 ```hack
 <T super V>
 ```
+
+In summary, `T super U` asserts that `T` must be a supertype of `U`.
