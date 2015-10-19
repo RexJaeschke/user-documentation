@@ -38,6 +38,32 @@ As we can see, methods `map` and `zip` each take a generic parameter, `Tu`, whos
 
 # Interfaces
 
+Like a class, an interface can have type parameters; for example:
+
+```hack
+interface MyCollection<T> {
+  const MAX_NUMBER_ITEMS = 1000;
+  public function put(T $item): void;
+  public function get(): T;
+}
+class MyList<T> implements MyCollection<T> {
+  public function put(T $item): void	{ /* implement method */ }
+  public function get(): T			{ /* implement method */ }
+  …
+}
+class MyQueue<T> implements MyCollection<T> {
+  public function put(T $item): void	{ /* implement method */ }
+  public function get(): T			{ /* implement method */ }
+  …
+}
+function processCollection<T>(MyCollection<T> $p1): void {
+  … /* can process any object whose class implements MyCollection
+}
+
+processCollection(new MyList(…));
+processCollection(new MyQueue(…));
+```
+
 # Traits
 
 # Type Aliases
