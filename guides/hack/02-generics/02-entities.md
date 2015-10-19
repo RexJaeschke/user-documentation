@@ -49,7 +49,7 @@ interface MyCollection<T> {
 class MyList<T> implements MyCollection<T> {
   public function put(T $item): void {  /* ... */ }
   public function get(): T {            /* ... */ }
-  /// …
+  // …
 }
 
 class MyQueue<T> implements MyCollection<T> {
