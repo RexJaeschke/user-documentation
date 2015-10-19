@@ -2,7 +2,7 @@
 
 A generic type-constraint indicates a requirement that a type must fulfill in order to be accepted as a type argument for a given type parameter. (For example, it might have to be a given class type or a subtype of that class type, or it might have to implement a given interface.)
 
-Consider the following example in which class `Complex` has one type parameter, `T`, and that has a constraint:
+Consider the following example in which class `Complex` has one type parameter, `T`, and that has a constraint, `num`:
 
 ```hack
 class Complex<T as num> {
