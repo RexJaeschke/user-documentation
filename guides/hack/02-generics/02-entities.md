@@ -24,6 +24,18 @@ The function returns the larger of the two arguments passed to it. In the case o
 
 # Methods
 
+The `push` and `pop` methods in the classes example are generic in that they execute in the context of the type parameter `T`. However, a method can have its own type parameters, even if it does not belong to a generic class. Conside the library type `Pair`:
+
+```hack
+final class Pair<Tv1, Tv2> implements ConstVector<mixed> {
+  // …
+  public function map<Tu>( (function(Tv): Tu) $callback ):
+    Vector<Tu>  public function zip<Tu>(Traversable<Tu> $iter):     Vector<Pair<mixed, Tu>> {…}
+  public function zip<Tu>( Traversable<Tu> $iterable ): Vector<Pair<mixed, Tu>>
+}
+```
+As we can see, methods `map` and `zip` each take a generic parameter, `Tu`, whose type is inferred from an argument passed to each method.
+
 # Interfaces
 
 # Traits
