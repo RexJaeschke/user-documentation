@@ -30,7 +30,7 @@ Although the `push` and `pop` methods are defined in the generic class type `Sta
 final class Pair<Tv1, Tv2> implements ConstVector<mixed> {
   // …
   public function map<Tu>( (function(Tv): Tu) $callback ):
-    Vector<Tu>  public function zip<Tu>(Traversable<Tu> $iter):     Vector<Pair<mixed, Tu>> {…}
+    Vector<Tu>  public function zip<Tu>(Traversable<Tu> $iter): Vector<Pair<mixed, Tu>> {…}
   public function zip<Tu>( Traversable<Tu> $iterable ): Vector<Pair<mixed, Tu>>
 }
 ```
